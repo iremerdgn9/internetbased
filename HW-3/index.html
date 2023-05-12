@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW-3</title>
+</head>
+<body>
+    <input pattern="\d*" title="Numbers only, please.">
+
+    <form>
+        <input type="text" name="name" placeholder="name-surname" required>
+        <input type="email" name="email" placeholder="email" required>
+        <input pattern="\d*" name="number" placeholder="number" required>
+        <input type="password" name="password" placeholder="Password" required>
+
+        <input type="submit" value="Publish"> <!-- form will be validated -->
+        <input type="submit" value="Save" formnovalidate> <!-- form will NOT be validated -->
+    </form>
+       
+    <!------Hidden--->
+    <input type="hidden" name="inputName" value="inputValue"> 
+
+    <!-----tel----->
+    <input type="tel" value="+905347854126">
+
+    <!-----email---->
+    <form>
+        <label>Email: </label>
+            <input type="email" name="email">
+    </form>
+    <br>
+
+    <!----number--->
+    <label>Number: </label>
+    <input type="number" name="quantity" value="0">
+
+    <!----range--->
+    <form>
+    <h3>Yetenekler </h3>
+    <label>HTML-CSS: </label>
+    <input type="range" min="" max="" step="" />
+    <label> JS: </label>
+    <input type="range" min="" max="" step="" />
+    <label>PHP: </label>
+    <input type="range" max="" min="" step="" />
+    </form><br>
+
+    <!-----search---->
+    <input type="search" name="googlesearch" placeholder="google'da ara!"><br>
+
+    <!--image---->
+    <input type="image" src="https://images.pexels.com/photos/842711/pexels-photo-842711.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="image" height="320px" width="450px" style="float: right;"><br>
+
+    <input type="checkbox" name="kutu1" checked="on"> HTML<br>
+    <input type="checkbox" name="kutu2"> CSS<br>
+    <input type="checkbox" name="kutu3"> PHP<br>
+
+    <form><br>
+    <!---week---->
+    Hafta: <input type="week" />&emsp;
+
+    <!----url---->
+    url: <input type="url" name="homepage" >
+    <button type="submit">
+        <img src="submit-icon.jpg" /> Submit
+       </button>
+<br>       
+
+    <!---datetime local---->
+    Tarih: <input type="datetime-local" >&emsp;
+
+    <!----month---->
+    Ay: <input type="month" >&emsp;
+
+    <!---time------>
+    Saat: <input type="time" ><br>
+    </form>
+
+
+    <meta name="application-name" content="OpenStreetMap">
+    <meta name="author" content="Your Name">
+    <meta name="description" content="Page Description">
+    <meta name="generator" content="HTML Generator 1.42">
+    <meta name="keywords" content="Keyword1, Keyword2">
+</body>
+</html>

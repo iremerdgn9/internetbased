@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW-4</title>
+</head>
+<body>
+    <form action="action.php" method="get">
+    <form action="action.php" method="post">
+    <input type="text" name="lastname" value="Mouse">
+
+    <form action="action.php" method="post" target="_blank" accept-charset="UTF-8"
+enctype="application/x-www-form-urlencoded" autocomplete="off" novalidate><br>
+
+<form method="post" enctype="multipart/form-data" action="upload.php">
+    <input type="file" name="pic" />
+    <input type="submit" value="Upload" />
+   </form>
+   
+<br>
+    <form target="_blank">
+    <fieldset>
+    <legend>irem erdoğan</legend>
+    ad: <br>
+    <input type="text"><br>
+    soyad: <br>
+    <input type="text"><br>
+    </fieldset><br>
+    <fieldset>
+    <legend>irem erdoğan</legend>
+    ders: <br>
+    <input type="text"><br>
+    sınıf: <br>
+    <input type="text"><br>
+    </fieldset><br>
+    <input type="submit" value="Submit">
+   </form>
+    
+
+
+   <form target="_self">
+    <legend>irem erdoğan</legend>
+    ad: <br>
+    <input type="text"><br>
+    soyad: <br>
+    <input type="text"><br>
+    <input type="submit" value="Submit">
+   </form>
+
+
+   <form target="_parent">
+    <legend>irem erdoğan</legend>
+    ad: <br>
+    <input type="text"><br>
+    soyad: <br>
+    <input type="text"><br>
+    <input type="submit" value="Submit">
+   </form>
+
+
+   <form target="_top">
+    <legend>irem erdoğan</legend>
+    ad: <br>
+    <input type="text"><br>
+    soyad: <br>
+    <input type="text"><br>
+    <input type="submit" value="Submit">
+   </form>
+   
+   
+   <style>
+    canvas{
+    border:1px solid gray;
+    }
+    </style>
+    <script async>
+    window.onload = init; // call init() once the window is completely loaded
+    function init(){
+    // #1 - get reference to <canvas> element
+    var canvas = document.querySelector('canvas');
+   
+    // #2 - get reference to the drawing context and drawing API
+    var ctx = canvas.getContext('2d');
+    // #3 - all fill operations are now in red
+    ctx.fillStyle = 'red';
+    // #4 - fill a 100x100 rectangle at x=0,y=0
+    ctx.fillRect(0,0,100,100);
+   
+    // #5 - all fill operations are now in green
+    ctx.fillStyle = 'green';
+   
+    // #6 - fill a 50x50 rectangle at x=25,y=25
+    ctx.fillRect(25,25,50,50);
+    }
+    </script>
+   </head>
+   <body>
+    <canvas width=300 height=200>Your browser does not support canvas.</canvas>
+   
+</body>
+</html>
