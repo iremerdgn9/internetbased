@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    h1{
+        font-family: Arial;
+    }
+    .formTitle{
+        color: brown;
+    }
+</style>
+
+<body>
+    
+<h1 style="color: blue; font-size: 3vw;"> this is a form application</h1>
+
+<div class="container">
+    <form action="layout.html" method="get">
+        <div class="row">
+            <div class="column-1">
+                <label>Firstname:</label>
+            </div>
+            <div class="column-2">
+                <input type="text" name="fname" required>
+                <span class="message"></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="column-1">
+                <label>Lastname:</label>
+        </div>
+        <div class="column-2">
+            <input type="text" name="lname" required>
+        </div>
+        </div>
+        <div class="row">
+            <div class="column-1">
+                <label>password:</label>
+            </div>
+            <div class="column-2">
+                <input type="password" name="pass" required>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="column-1">
+                <label>Birthdate:</label>
+            </div>
+            <div class="column-2">
+                <input type="date" name="bdate" required>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="column-1">
+                <label>class level:</label>
+            </div>
+            <div class="column-2">
+                <select>
+                <option value="1">level 1</option>
+                <option value="2">level 2</option>
+                <option value="3">level 3</option>
+            </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column-1">
+                <label>vehicle type:</label>
+            </div>
+            <div class="column-2">
+                <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                <label for="vehicle1">Bike</label><br>
+                <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                <label for="vehicle2" >car</label><br>
+                <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+                <label for="vehicle3" >boat</label><br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="column-1">
+                <label>comment:</label>
+            </div>
+            <div class="column-2">
+                <textarea placeholder="write sth..."></textarea>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="column-1">
+                <label></label>
+            </div>
+            <div class="column-2">
+                <input type="submit" value="Submit">
+            </div>
+        </div>
+    </form>
+</div>
+
+
+
+</body>
+</html>
