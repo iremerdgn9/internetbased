@@ -4,58 +4,48 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 </head>
+<script>
+    function fun(){
+        window.alert("kaydetme başarılı!...");
+    }
+
+</script>
 <body>
-<?php
-// Retrieve the form data
-$full_name = $_POST['full_name'];
-$email = $_POST['email'];
-$id = $_POST['id'];
-$gender = $_POST['gender'];
+<div>
+    <?php
 
-// Perform validation on the data if needed
+    if(isset($_POST['create'])) {
 
-// Process the data
-// Perform actions such as saving to a database, sending an email, etc.
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "verikaydetme_formdb";
 
-// Example: Save the data to a database
-// Assuming you have a database connection established
-$servername = "localhost";
-$username = "username";
-$password = "password";
-$verikaydetme_formdb = "database_name";
+        $connect = new mysqli($servername, $username, $password, $dbname);
 
-// Create a connection
-$conn = new mysqli($servername, $username, $password, $verikaydetme_formdb);
+        if ($connect->connect_error) {
+            die("connect this database failed due to." . $connect->connect_error);
+        }
 
-// Check the connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+        $full_name = $_POST['full_name'];
+        $email = $_POST['email'];
+        $gender = $_POST['gender'];
 
-// Prepare and execute the SQL query
-$sql = "INSERT INTO form_data (full_name, email, id, gender) VALUES ('$full_name', '$id', '$email','$gender')";
+        $sql = "insert into students(full_name, email, gender) VALUES ('$full_name', '$email', '$gender');";
 
-if ($conn->query($sql) === TRUE) {
-    echo "Data saved successfully!";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
-}
+        if ($connect->query($sql) == true) {
+            echo "you are successfully registered.";
+            header('location:list.php');
+        } else {
+            echo "error: $sql <br> $connect->error";
+        }
 
-// Close the database connection
-$conn->close();
+        $connect->close();
 
-// Example: Send an email
-$to = "recipient@example.com";
-$subject = "New Form Submission";
-$body = "full Name: $full_name\nEmail: $email\nid: $id";
-$headers = "From: sender@example.com";
+    }
+    ?>
 
-if (mail($to, $subject, $body, $headers)) {
-    echo "Email sent successfully!";
-} else {
-    echo "Failed to send email.";
-}
-?>
+</div>
 
             <form action="registration-form.php" onsubmit="return validate()" method="post">
                 <legend style="text-align: end">Designed by İREM ERDOĞAN</legend>
@@ -85,6 +75,8 @@ if (mail($to, $subject, $body, $headers)) {
                     </div>
                     <div class="column-2">
                     <input type="email" name="email" required>
+                        <span class="message"></span>
+
                     </div>
                 </div>
 
@@ -106,13 +98,11 @@ if (mail($to, $subject, $body, $headers)) {
                     </div>
 
                     <div class="column-2">
-                        <input type="submit" value="submit">
+                        <input type="submit" name="create" value="submit">
                     </div>
                 </div>
 
             </form>
-
-
 </body>
 
 </html>

@@ -3,7 +3,7 @@
 }
 .container{
     background-color: #ccc;
-    width: 70%;
+    width: 80%;
     padding: 5px;
 }
 .column-1{
@@ -28,6 +28,7 @@ input[type=text],input[type=submit],input[type=radio],input[type=email],select,t
     text-transform: uppercase;
     box-sizing: border-box;
     display: inline-block;
+    position: relative;
 }
 
 input[type=text]:focus, textarea:focus, select:focus,input[type=radio], input[type=email]:focus{
@@ -53,8 +54,8 @@ input[type=submit]:hover{
     display: table;
     clear: both;
 }
-:required + .message::before{
-    content: "* ";
+:required + .message:before{
+    content: " * ";
 }
 :required:invalid{
     border: 1px solid red;

@@ -1,3 +1,37 @@
+<?php
+
+if(isset($_POST['create'])) {
+
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "verikaydetme_formdb";
+
+    $connect = new mysqli($servername, $username, $password, $dbname);
+
+    if ($connect->connect_error) {
+        die("connect this database failed due to." . $connect->connect_error);
+    }
+
+    $full_name = $_POST['full_name'];
+    $email = $_POST['email'];
+    $gender = $_POST['gender'];
+
+    $sql = "insert into students(full_name, email, gender) VALUES ('$full_name', '$email', '$gender');";
+
+    if ($connect->query($sql) == true) {
+        echo "you are successfully registered.";
+        header('location:list.php');
+    } else {
+        echo "error: $sql <br> $connect->error";
+    }
+
+    $connect->close();
+
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,7 +82,7 @@
     </nav>
     <article>
         <div class="container">
-            <legend style="text-align: end">Designed by İREM ERDOĞAN</legend>
+            <legend style="text-align: end">Designed by İREM ERDOĞAN</legend><br>
 
             <form action="registration-form.php" onsubmit="return validate()" method="post">
                 <div class="row">
@@ -56,9 +90,7 @@
                         <label>id:</label>
                     </div>
                     <div class="column-2">
-                        <label>
-                            <input type="text" name="id" required>
-                        </label>
+                        <input type="text" name="id" required>
                         <span class="message"></span>
                     </div>
                 </div>
@@ -76,9 +108,12 @@
                 <div class="row">
                     <div class="column-1">
                         <label>Email Address:</label>
+
                     </div>
                     <div class="column-2">
                         <input type="email" name="email" required>
+                        <span class="message"></span>
+
                     </div>
                 </div>
 
@@ -113,5 +148,6 @@
 <footer>
     this is footer
 </footer>
+
 </body>
 </html>
