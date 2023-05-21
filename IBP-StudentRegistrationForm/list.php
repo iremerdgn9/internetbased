@@ -17,7 +17,7 @@
 
     function validate(){
         let x = document.getElementById("full_name").value; /*validate fonksiyonu fname boşsa bir uyarı mesajı döndürür ve formun gönderilmesini önler. */
-        if(x==""){
+        if(x===" "){
             alert("name should be filled");
             return false;
         }
@@ -42,17 +42,17 @@
                 <a href="index-form.html">form Page</a>
             </li>
             <li>
-                <a href="registration-form.php">index Page</a>
+                <a href="list.php">index Page</a>
             </li>
         </ol>
     </nav>
     <article>
         <table>
             <tr>
-                <th>ID</th>
-                <th>FULL NAME</th>
-                <th>EMAİL</th>
-                <th>GENDER</th>
+                <th>ID </th>
+                <th>FULL NAME </th>
+                <th>EMAİL </th>
+                <th>GENDER </th>
             </tr>
 
         <?php
@@ -68,17 +68,18 @@
         }
         $sql = "select * from students";
         $result = $connect->query($sql);
+        /*$rowdata= isset($rowdata['rowdata']);*/
 
-        if($result->num_rows>0){
-            while($rowdata = $result->fetch_assoc());
+        if($result -> num_rows> 0){
+            while($rowdata = $result->fetch_assoc()){
+                echo "<tr>";
+                echo "<td>" . $rowdata["id"] . "</td>";
+                echo "<td>" . $rowdata["full_name"] . "</td>";
+                echo "<td>" . $rowdata["email"]  . "</td>";
+                echo "<td>" . $rowdata["gender"] . "</td>";
+                echo "</tr>";
+			}
         }
-        echo "<tr>";
-        echo "<td>", $rowdata["id"]. "</td";
-        echo "<td>", $rowdata["full_name"]. "</td";
-        echo "<td>", $rowdata["email"]. "</td";
-        echo "<td>", $rowdata["gender"]. "</td";
-        echo "</tr>";
-
         ?>
 </table>
     </article>
