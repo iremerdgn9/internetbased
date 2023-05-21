@@ -4,6 +4,7 @@
 .container{
     background-color: #ccc;
     width: 80%;
+    height: 70%;
     padding: 5px;
 }
 .column-1{
@@ -42,6 +43,7 @@ label{
 input[type= submit]{
     background-color: aliceblue;
 }
+
 input[type=submit]:hover{
     cursor: pointer;
     background-color: blueviolet;

@@ -1,7 +1,4 @@
 <?php
-
-if(isset($_POST['create'])) {
-
     $servername = "localhost";
     $username = "root";
     $password = "";
@@ -28,9 +25,7 @@ if(isset($_POST['create'])) {
 
     $connect->close();
 
-}
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -76,7 +71,7 @@ if(isset($_POST['create'])) {
                 <a href="index-form.html">form Page</a>
             </li>
             <li>
-                <a href="registration-form.php">index Page</a>
+                <a href="../MySql-VeriKaydetme-Form/registration-form.php">index Page</a>
             </li>
         </ol>
     </nav>
@@ -84,7 +79,7 @@ if(isset($_POST['create'])) {
         <div class="container">
             <legend style="text-align: end">Designed by İREM ERDOĞAN</legend><br>
 
-            <form action="registration-form.php" onsubmit="return validate()" method="post">
+            <form action="" method="post">
                 <div class="row">
                     <div class="column-1">
                         <label>id:</label>
